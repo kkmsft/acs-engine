@@ -94,6 +94,12 @@ func kubernetesAddonSettingsInit(profile *api.Properties) []kubernetesFeatureSet
 			profile.OrchestratorProfile.KubernetesConfig.GetAddonScript(DefaultACIConnectorAddonName),
 		},
 		{
+			"kubernetesmasteraddons-azure-app-gw-deployment.yaml",
+			"azure-app-gw-deployment.yaml",
+			profile.OrchestratorProfile.KubernetesConfig.IsAzureAppGwEnabled(),
+			profile.OrchestratorProfile.KubernetesConfig.GetAddonScript(DefaultAzureAppGwAddonName),
+		},
+		{
 			"kubernetesmasteraddons-cluster-autoscaler-deployment.yaml",
 			"cluster-autoscaler-deployment.yaml",
 			profile.OrchestratorProfile.KubernetesConfig.IsClusterAutoscalerEnabled(),

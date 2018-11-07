@@ -1238,6 +1238,11 @@ func (k *KubernetesConfig) IsACIConnectorEnabled() bool {
 	return k.isAddonEnabled(DefaultACIConnectorAddonName, DefaultAADPodIdentityAddonEnabled)
 }
 
+//IsAzureAppGwEnabled checks if the Azure App Gateway is enabled.
+func (k *KubernetesConfig) IsAzureAppGwEnabled() bool {
+	return k.isAddonEnabled(DefaultAzureAppGwAddonName, DefaultAzureAppGwAddonEnabled)
+}
+
 // IsClusterAutoscalerEnabled checks if the cluster autoscaler addon is enabled
 func (k *KubernetesConfig) IsClusterAutoscalerEnabled() bool {
 	return k.isAddonEnabled(DefaultClusterAutoscalerAddonName, DefaultClusterAutoscalerAddonEnabled)

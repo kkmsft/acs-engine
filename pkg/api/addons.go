@@ -46,6 +46,14 @@ func (cs *ContainerService) setAddonsConfig() {
 		},
 	}
 
+	defaultAppGwAddonsConfig := KubernetesAddon{
+		Name:    DefaultAzureAppGwAddonName,
+		Enabled: helpers.PointerToBool(DefaultAzureAppGwAddonEnabled),
+		Config: map[string]string {
+			"name": "k8s-azure-app-gw",
+		}
+	}
+
 	defaultClusterAutoscalerAddonsConfig := KubernetesAddon{
 		Name:    DefaultClusterAutoscalerAddonName,
 		Enabled: helpers.PointerToBool(DefaultClusterAutoscalerAddonEnabled),

@@ -117,6 +117,8 @@ const (
 	DefaultAADPodIdentityAddonEnabled = false
 	// DefaultACIConnectorAddonEnabled determines the acs-engine provided default for enabling aci connector addon
 	DefaultACIConnectorAddonEnabled = false
+	//DefaultAzureAppGwAddonEnabled determines the acs-engine provided default for enabling the azure app gw addon.
+	DefaultAzureAppGwAddonEnabled = false
 	// DefaultClusterAutoscalerAddonEnabled determines the acs-engine provided default for enabling cluster autoscaler addon
 	DefaultClusterAutoscalerAddonEnabled = false
 	// DefaultBlobfuseFlexVolumeAddonEnabled determines the acs-engine provided default for enabling blobfuse flexvolume addon
@@ -155,6 +157,8 @@ const (
 	DefaultAADPodIdentityAddonName = "aad-pod-identity"
 	// DefaultACIConnectorAddonName is the name of the aci-connector addon deployment
 	DefaultACIConnectorAddonName = "aci-connector"
+	//DefaultAzureAppGwAddonName is the name of the default azure app gw addon deployment
+	DefaultAzureAppGwAddonName = "azure-app-gw"
 	// DefaultClusterAutoscalerAddonName is the name of the cluster autoscaler addon deployment
 	DefaultClusterAutoscalerAddonName = "cluster-autoscaler"
 	// DefaultBlobfuseFlexVolumeAddonName is the name of the blobfuse flexvolume addon

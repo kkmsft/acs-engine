@@ -373,6 +373,15 @@ func (t *TemplateGenerator) getTemplateFuncMap(cs *api.ContainerService) templat
 			cloudSpecConfig := cs.GetCloudSpecConfig()
 			return cloudSpecConfig.CloudName == api.AzurePublicCloud
 		},
+		"UseAzureAppGwEnabled": func() bool {		
+			return cs.Properties.OrchestratorProfile.KubeletConfig.IsAzureAppGwEnabled()
+		},
+		"AzureAppGwName": func() bool {
+			if !cs.Properties.OrchestratorProfile.KubernetesConfig.IsAzureAppGwEnabled()  {
+				log.Fatalf("Azure Application Gateway name is accessed when feature is disabled!!")
+			}
+			return cs.Properties.OrchestratorProfile.KubernetesConfig.AzureAppGwName()
+		}
 		"IsMooncake": func() bool {
 			cloudSpecConfig := cs.GetCloudSpecConfig()
 			return cloudSpecConfig.CloudName == api.AzureChinaCloud

@@ -74,6 +74,14 @@ func assignKubernetesParameters(properties *api.Properties, parametersMap params
 					addValue(parametersMap, "kubernetesAADPodIdentityEnabled", helpers.IsTrueBoolPointer(aadPodIdentityAddon.Enabled))
 				}
 			}
+			if kubernetesConfig.IsAzureAppGwEnabled() {
+				azureAppGwAddon := kubernetesConfig.GetAddonByName(DefaultAzureAppGwAddonName)
+				azureAppGwIndex := azureAppGwAddon.GetAddonContainersIndexByName(DefaultAzureAppGwAddonName)
+				if azureAppGwIndex > -1 {
+					addValue(parametersMap, "kubernetesAzureAppGwEnabled", helpers.IsTrueBoolPointer(azureAppGwAddon.Enabled))
+					addValue(parametersMap, "kubernetesAzureAppGwName", azureAppGwAddon.Config["name"])
+				}
+			}
 			if kubernetesConfig.IsACIConnectorEnabled() {
 				aciConnectorAddon := kubernetesConfig.GetAddonByName(DefaultACIConnectorAddonName)
 				aciConnectorIndex := aciConnectorAddon.GetAddonContainersIndexByName(DefaultACIConnectorAddonName)

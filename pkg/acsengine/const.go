@@ -56,6 +56,8 @@ const (
 	DefaultAADPodIdentityAddonName = "aad-pod-identity"
 	// DefaultACIConnectorAddonName is the name of the aci-connector addon deployment
 	DefaultACIConnectorAddonName = "aci-connector"
+	//DefaultAzureAppGwAddonName is the name of the default azure app gw addon deployment
+	DefaultAzureAppGwAddonName = "azure-app-gw"
 	// DefaultDashboardAddonName is the name of the kubernetes-dashboard addon deployment
 	DefaultDashboardAddonName = "kubernetes-dashboard"
 	// DefaultClusterAutoscalerAddonName is the name of the autoscaler addon deployment

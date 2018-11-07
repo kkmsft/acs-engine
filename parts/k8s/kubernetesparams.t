@@ -387,6 +387,22 @@
       "type": "bool"
     },
 {{end}}
+{{if .OrchestratorProfile.KubernetesConfig.IsAzureAppGwEnabled}}
+    "kubernetesAzureAppGwEnabled": {
+      "defaultValue": false,
+      "metadata": {
+        "description": "Azure Application Gateway status"
+      },
+      "type": "bool"
+    },
+    "kubernetesAzureAppGwName": {
+      "defaultValue": false,
+      "metadata": {
+        "description": "Azure Application Gateway name"
+      },
+      "type": "string"
+    },
+{{end}}
     "kubernetesACIConnectorEnabled": {
       "metadata": {
         "description": "ACI Connector Status"
